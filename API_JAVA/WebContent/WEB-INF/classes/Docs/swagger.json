@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API JAVA",
+    "description": "API para teste de DEV Java",
+    "version": "3.0.0",
+    "contact": {
+      "name": "Jaqueline Sakuma",
+      "url": "https://www.linkedin.com/in/jaqueline-sakuma-a37639111/",
+      "email": "jak_sakuma@hotmail.com"
+    }
+  },
+  "host": "localhost:8080",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/API_JAVA",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/info": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "API Definition",
+        "description": "Retorna um json com a descrição da API, seguindo o padrao OpenAPI v2.\n",
+        "responses": {
+          "200": {
+            "description": "JSON com a descrição da API",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/mut/api/v1/salvarDados": {
+      "post": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Serviço que insere dados na base MySQL",
+        "description": "Serviço que insere dados da API na base MySQL",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "Resultado com sucesso."
+          },
+          "201": {
+            "description": "Falha na consulta do serviço."
+          },
+          "202": {
+            "description": "Erro de conexão."
+          },
+          "400": {
+            "description": "Parametro obrigatorio nao informado."
+          },
+          "401": {
+            "description": "Sem conexão com Banco de Dados."
+          }
+        }
+      }
+    },
+    "/mut/api/v1/baixarDados": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Serviço que obtem informações",
+        "description": "Serviço que obtem informações da API https://jsonplaceholder.typicode.com/users",
+        "responses": {
+          "200": {
+            "description": "Resultado com sucesso."
+          },
+          "201": {
+            "description": "Falha na consulta do serviço."
+          },
+          "202": {
+            "description": "Erro de conexão."
+          },
+          "400": {
+            "description": "Parametro obrigatorio nao informado."
+          },
+          "401": {
+            "description": "Sem conexão com Banco de Dados."
+          }
+        }
+      }
+    }
+  }
+}
